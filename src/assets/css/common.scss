@@ -1,0 +1,152 @@
+/* ------公共样式------ */
+
+body,
+div,
+span,
+header,
+footer,
+nav,
+section,
+aside,
+article,
+ul,
+dl,
+dt,
+dd,
+li,
+a,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+i,
+b,
+textarea,
+button,
+input,
+select,
+figure,
+figcaption {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-style: normal;
+  text-decoration: none;
+  border: none;
+  box-sizing: border-box;
+  font-family: "Microsoft Yahei", sans-serif;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  height: auto;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+input[type="button"],
+input[type="submit"],
+input[type="search"],
+input[type="reset"] {
+  -webkit-appearance: none;
+}
+
+// 更改input的默认背景颜色
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
+  //-webkit-text-fill-color: #000000 !important;
+}
+
+// 更改input的placeholder的颜色
+input::-webkit-input-placeholder{
+  color: #898989!important;
+}
+input::-moz-placeholder{   /* Mozilla Firefox 19+ */
+  color: #898989!important;
+}
+input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+  color: #898989!important;
+}
+input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
+  color: #898989!important;
+}
+
+textarea {
+  -webkit-appearance: none;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+  width: 100%;
+  min-width: 1366px;
+  min-height: 768px;
+  margin: 0;
+  padding: 0;
+  font-size: 0.8vw;
+  overflow: hidden;
+}
+
+.alarm_menu ul {
+  width: 100%;
+  display: inline-block;
+  list-style: none;
+  margin: 0;
+  padding-left: 0px;
+}
+
+.alarm_menu ul li {
+  display: table-cell;
+  width: 2.5vw;
+  height: 1vw;
+  line-height: 1vw;
+  text-align: center;
+  border-top: 1px solid #0CBBBD;
+  border-bottom: 1px solid #0CBBBD;
+  border-right: 1px solid #0CBBBD;
+  font-size: 0.5vw;
+}
+
+.alarm_menu ul li:nth-child(1) {
+  border-left: 1px solid #0CBBBD;
+  border-top-left-radius: 5px;
+}
+
+.alarm_menu ul li:hover {
+  cursor: pointer;
+  background: #454849;
+}
+
+.alarm_menu .alarm_menu_li_active {
+  color: #0FEBFF;
+}
+
+.alarm_menu .alarm_span {
+  text-alignt: right;
+  width: 4vw;
+  border: 0;
+  border-bottom: 1px solid #0CBBBD;
+  cursor: none;
+}
+
+.alarm_menu .alarm_span:hover {
+  cursor: none;
+  background: inherit;
+}
+
+//元素隐藏
+.displayNone {
+  display: none;
+}
+//1920*1080
+@media screen and (min-width: 2000px) and (max-width:6000px) {
+
+}
+@media (max-width: 1920px) {
+
+}
+
