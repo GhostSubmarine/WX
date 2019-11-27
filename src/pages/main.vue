@@ -10,6 +10,14 @@
       </el-menu-item>
     </el-menu>
     <div class="main-container">
+      <div class="FlexWrapper"> 
+        <div class="FlexItems FlexOne">I am content in the inner Flexbox 
+        1.</div> 
+        <div class="FlexItems FlexTwo">I am content in the inner Flexbox 
+        2.</div> 
+        <div class="FlexItems FlexThree">I am content in the inner Flexbox 
+        3.</div> 
+      </div>
       <div v-for="item in articel" :key="item.id" class="main-container-list">
         <div class="list">
           <span class="list-title">{{item.title}}</span>
