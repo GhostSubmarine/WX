@@ -89,3 +89,6 @@ function sendTemplateMsg(openid, access_token) {
         }
     });
 }
+exports.getOpenId=getOpenId;
+exports.getAccessToken=getAccessToken;
+exports.sendTemplateMsg=sendTemplateMsg;

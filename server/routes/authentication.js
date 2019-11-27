@@ -3,7 +3,7 @@ var router = express.Router();
 var config = require('../config/config');
 
 /* GET home page. */
-app.get('/', function(req, res) {
+router.get('/', function(req, res) {
 
     const appid = config.appid;
     const redirect_uri = urlencode("http://www.xxx.net/code"); //这里的url需要转为加密格式，它的作用是访问微信网页鉴权接口成功后微信会回调这个地址，并把code参数带在回调地址中
