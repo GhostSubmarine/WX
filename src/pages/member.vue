@@ -1,28 +1,28 @@
 <template>
     <div>
-        <div class="FlexWrapper"> 
-            <div class="FlexItems FlexOne">I am content in the inner Flexbox 
-            1.</div> 
-            <div class="FlexItems FlexTwo">I am content in the inner Flexbox 
-            2.</div> 
-            <div class="FlexItems FlexThree">I am content in the inner Flexbox 
-            3.</div> 
+        <div class="main"> 
+            <p v-for="(value,index) in 10" :key="index">{{index}}</p>
         </div>
     </div>
 </template>
 <style lang="scss" scoped>
-    .FlexItems { 
-    border: 1px solid #ebebeb; 
-    background-color: #34005B; 
-    display: flex; 
-    height: 100px; 
-    } 
-    .FlexOne { 
-    flex: 1 0 auto; 
-    } 
-    .FlexTwo, 
-    .FlexThree { 
-    flex: 1 0 auto; 
+    .main {
+        column-count: 4;
     }
-
 </style>
+<script>
+export default {
+    data:{
+
+    },
+    methods:{
+        getMap(){
+           var map=new Map(); 
+           var keyString="a string";
+           map.set(keyString,"和键a相关联的值");
+           map.get(keyString);
+           map.get("a string");
+        }
+    }
+}
+</script>

@@ -1,27 +1,14 @@
 <template>
   <div class="main">
-    <el-menu :default-active="defaultActive" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-      <el-menu-item
-        v-for="item in menuData"
-        :key="item.menuId"
-        :index="item.menuId.toString()"
-        @click="selectItems(item.menuLink)">
-        {{item.menuName}}
-      </el-menu-item>
-    </el-menu>
-    <div class="main-container">
-      <div v-for="(index,item) in articel" :key="index" class="main-container-list">
-        <div class="list">
-          <span class="list-title">{{item.title}}</span>
-          <span class="list-info">{{item.info}}</span>
-        </div>
-        <div class="icon">
-          <span class="el-icon-arrow-right"></span>
-        </div>
-      </div>
+    <div class="top">
+      <el-input class="serach" placeholder="请输入想要查询的信息">
+      </el-input>
+      <i class="el-icon-search"></i>
     </div>
-    <div class="" style="position:fixed;bottom:0;">
-      <a target="_blank" href="http://www.beian.miit.gov.cn">粤ICP备16113421号</a>
+    
+    <div v-for="(item,index) in article" :key="index" @click="toArticle(index)" class="container">
+      <div class="title">{{item.title}}</div>
+      <div class="content">{{item.content}}</div>
     </div>
   </div>
 </template>
@@ -29,11 +16,14 @@
 import { mapState } from "vuex"; // vuex的使用
 import { getData } from "@/service/getData"; // 统一接口请求方法
 import { getEleNum } from '@/utils/jsCommon';
+import axios from 'axios'
 export default {
   components: {
   },
   data () {
     return {
+      article:'',
+      mysql:'',
       test:{},
       index:'',
       defaultActive: '0', // 选中菜单index
@@ -67,24 +57,45 @@ export default {
     // // console.log("this.$route.fullPath---------");
     // // console.log(this.$route.fullPath);
     // this.getArticleList(-1);
-    this.testrouter();
-    debugger
   },
   created(){
-
+    this.getArticleList();
   },
   methods: {
+    getData(){
+      let arr=[];
+      $("#svg #g-line").find("path").each(function(index,val){
+        arr.push($(this).attr("d"))
+      });
+      let data=JSON.stringify(arr);
+      console.log(data)
+    },
+    operateMysql(){
+      let url="/user";
+      let params={
+        mysql:this.mysql
+      };
+      getData(url,params,"post").then(res=>{
+        debugger
+      });
+    },
     handleSelect(key, keyPath) {
       this.getArticleList(key);
     },
-    getArticleList(key){
-      let url="/article/articleList";
-      let params={
-        menuIndex:key
-      };
-      getData(url, params, "get").then(res => {
-        
-      });  
+    getArticleList(){
+      let that=this;
+      let url = "http://"+window.location.host.split(':')[0]+":3000"
+      axios.get(url+'/api/article')
+      .then(function (response) {
+        that.article=response.data
+      })
+      .catch(function (error) {
+      });
+    },
+    toArticle(index){
+      this.$store.state.index=index;
+      this.$router.push({path:'/article'});
+      debugger
     },
     getMenu(){
       let url="/article/menu";
@@ -134,45 +145,43 @@ export default {
   }
 }
 </script>
-<style lang="scss">
-    
-    .main {
+<style lang="scss" scoped>
+.main {
+  overflow-y:scroll; 
+  background-color: #f2f2f2;
+  .top{
+    display: flex;
+    padding: 1vh 5vw;
+    align-items: center;
+    .serach {
+      width: 50vw;
+      display: inline-block;
+      margin-right:5vw; 
+    }
+  }
+  .container {
+    cursor: pointer;
+    width: 95vw;
+    display: flex;
+    flex-direction: column;
+    margin: 2vh 2.5vw;
+    border: 1px solid #f2f2f2;
+    text-shadow: 5px 5px 5px #999999;
+    background-color: white;
+    .title,
+    .content {
+      height:20px;
+      font-size: 16px;
+      width: 90vw;
+      margin: 0 2.5vw;
       display: flex;
-      flex-direction: column;
-      width: 100%;
-      height: 100%;
-      .el-menu-demo {
-        position: fixed;
-        top:0;
-      }
-      .main-container {
-        display: flex;
-        flex-direction: column;
-        margin: 1% 5%;
-        .main-container-list {
-          width: 100%;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          .list {
-            font-size:24px;
-            width:80%;
-            .list-title {
-              overflow: hidden;
-              text-overflow: ellipsis;
-              text-align: left;
-              margin: 5% 0;
-            }
-            .list-info {
-              margin:0 0 5% 0;
-            }
-          }
-          .icon {
-            width: 10%;
-            display: flex;
-            align-items: center;
-          }
-        }
-      }
-    }  
+      align-items: center;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;/*溢出部分用...省略号代替*/
+    }
+  }
+}
+  
+    
 </style>
