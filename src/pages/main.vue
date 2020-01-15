@@ -147,7 +147,9 @@ export default {
 </script>
 <style lang="scss" scoped>
 .main {
-  overflow-y:scroll; 
+  width: 100%;
+  height: 100%;
+  overflow:auto; 
   background-color: #f2f2f2;
   .top{
     display: flex;
