@@ -21,7 +21,7 @@ var app = express();
 
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cookieParser());
@@ -37,28 +37,28 @@ const sessionStore = new RedisStore({
   client: redisClient
 })
 app.use(session({
-    secret: 'CEdriC_#18603193', // 密匙可以随意添加，建议由大写+小写+加数字+特殊字符组成
-    cookie: {
-        path: '/', // 默认配置
-        httpOnly: true, // 默认配置，只允许服务端修改
-        maxAge: 24 * 60 * 60 * 1000 // cookie 失效时间 24小时
-    },
-    store: sessionStore  // 将 session 存入 redis
+  secret: 'CEdriC_#18603193', // 密匙可以随意添加，建议由大写+小写+加数字+特殊字符组成
+  cookie: {
+    path: '/', // 默认配置
+    httpOnly: true, // 默认配置，只允许服务端修改
+    maxAge: 24 * 60 * 60 * 1000 // cookie 失效时间 24小时
+  },
+  store: sessionStore  // 将 session 存入 redis
 }))
 
 app.use('/index', indexRouter);
-app.use('/authentication',authenticationRouter)
+app.use('/authentication', authenticationRouter)
 app.use('/user', userRouter);
-app.use('/code',codeRouter);
-app.use('/ex',exRouter);
-app.use('/api/article',articleRouter);
+app.use('/code', codeRouter);
+app.use('/ex', exRouter);
+app.use('/api/article', articleRouter);
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};

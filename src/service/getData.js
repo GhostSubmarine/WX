@@ -12,4 +12,4 @@ let getData = (url, params, type = 'GET', opt = {}) => {
   return result;
 };
 
-export { getData };
+export {getData};

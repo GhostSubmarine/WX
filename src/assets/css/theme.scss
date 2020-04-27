@@ -12,28 +12,35 @@ $color-7: #53FEC0;
 $color-8: #1D8B3D;
 $color-9: #000;
 
-.color-0{
+.color-0 {
   color: $color-0;
 }
-.color-1{
+
+.color-1 {
   color: $color-1;
 }
-.color-2{
+
+.color-2 {
   color: $color-2;
 }
-.color-3{
+
+.color-3 {
   color: $color-3;
 }
-.color-4{
+
+.color-4 {
   color: $color-4;
 }
-.color-5{
+
+.color-5 {
   color: $color-5;
 }
-.color-6{
+
+.color-6 {
   color: $color-6;
 }
-.color-7{
+
+.color-7 {
   color: $color-7;
 }
 
@@ -43,22 +50,26 @@ $color-9: #000;
 /deep/ .el-dialog {
   min-width: 385px;
 }
+
 /deep/ .el-dialog__header {
   padding: 0.5vw;
-  background: -webkit-linear-gradient(left, #87F4BF , #69DEFB);  /* Safari 5.1 - 6.0 */
-  background: -o-linear-gradient(right, #87F4BF , #69DEFB);  /* Opera 11.1 - 12.0 */
-  background: -moz-linear-gradient(right, #87F4BF , #69DEFB);  /* Firefox 3.6 - 15 */
-  background: linear-gradient(to right, #87F4BF , #69DEFB); /* 标准的语法 */
+  background: -webkit-linear-gradient(left, #87F4BF, #69DEFB); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(right, #87F4BF, #69DEFB); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(right, #87F4BF, #69DEFB); /* Firefox 3.6 - 15 */
+  background: linear-gradient(to right, #87F4BF, #69DEFB); /* 标准的语法 */
 }
+
 /deep/ .el-dialog__title {
   line-height: 1.3vw;
   font-size: 1.3rem;
   font-weight: bold;
   color: #ffffff;
 }
+
 /deep/ .el-icon-close:before {
   color: #ffffff;
 }
+
 /deep/ .el-dialog__body {
   padding: 0.5vw 0.8vw;
 }
@@ -71,118 +82,144 @@ $color-9: #000;
 .el-date-editor.el-input, .el-date-editor.el-input__inner {
   width: 11vw;
 }
+
 .el-input--prefix .el-input__inner {
   //padding-left: 1vw
 }
+
 /*下拉框-input*/
 /deep/ .el-input__inner, /deep/ .el-input--small .el-input__inner {
   height: 1.5vw;
   line-height: 1.5vw;
   padding: 0 1.5vw;
 }
+
 /deep/ .dialog-el-form .el-select {
   width: 100%;
 }
+
 // dialog的叉按钮
 /deep/ .el-dialog__headerbtn {
   top: 0.5vw;
   right: 1vw;
   font-size: 1rem;
 }
+
 /*下拉框-宽度*/
-/deep/ .search-el-form .el-select>.el-input {
+/deep/ .search-el-form .el-select > .el-input {
   width: 7.5vw;
 }
+
 /deep/ .el-range-editor.el-input__inner {
   padding: 0 0.5vw;
 }
+
 /deep/ .el-input__icon {
   line-height: 1.5vw;
   width: 1vw;
 }
 
 /*表格,分页样式*/
-/deep/ .el-table td, /deep/ .el-table th{
+/deep/ .el-table td, /deep/ .el-table th {
   padding: 0.65vw 0;
   font-size: 1rem;
   color: #000000;
   //font-size: 1rem;
 }
+
 /deep/ .el-table th {
   background: #e4e4e4;
   min-width: 90px;
   position: initial;
 }
+
 /deep/ .el-table .cell {
   line-height: 1vw;
 }
+
 /deep/ .el-table__empty-text {
   font-size: 1rem
 }
-/deep/ .el-tabs__item:hover{
+
+/deep/ .el-tabs__item:hover {
   color: #10DD95;
 }
+
 // 分页
 /deep/ .el-pagination.is-background .el-pager li {
   margin: 0 0.2vw;
   min-width: 1.5vw;
 }
+
 /deep/ .el-pager li,
 /deep/ .el-pagination.is-background .btn-prev,
 /deep/ .el-pagination.is-background .btn-next.disabled,
 /deep/ .el-pagination.is-background .btn-next:disabled,
 /deep/ .el-pagination.is-background .btn-prev.disabled,
 /deep/ .el-pagination.is-background .btn-prev:disabled,
-/deep/ .el-pagination.is-background .el-pager li.disabled{
+/deep/ .el-pagination.is-background .el-pager li.disabled {
   padding: 0 0.2vw;
   font-size: 1rem;
   min-width: 1.6vw;
   height: 1.5vw;
   line-height: 1.5vw;
 }
+
 /deep/ .el-pagination .btn-next .el-icon, /deep/ .el-pagination .btn-prev .el-icon {
-  font-size:1rem;
+  font-size: 1rem;
 }
-/deep/ .el-tabs__item, /deep/ .el-form-item__label, /deep/ .el-pagination .btn-prev .el-icon{
-  font-size:1rem;
+
+/deep/ .el-tabs__item, /deep/ .el-form-item__label, /deep/ .el-pagination .btn-prev .el-icon {
+  font-size: 1rem;
 }
-/deep/ .el-tabs__item.is-active{
-  color:#10DD95;
+
+/deep/ .el-tabs__item.is-active {
+  color: #10DD95;
 }
-/deep/ .el-tabs__active-bar{
+
+/deep/ .el-tabs__active-bar {
   background-color: #10DD95;
 }
-/deep/ .el-radio__input.is-checked+.el-radio__label{
-  color:#10DD95
+
+/deep/ .el-radio__input.is-checked + .el-radio__label {
+  color: #10DD95
 }
-/deep/ .el-radio__input.is-checked .el-radio__inner{
-  border-color:#10DD95;
-  background:#10DD95
+
+/deep/ .el-radio__input.is-checked .el-radio__inner {
+  border-color: #10DD95;
+  background: #10DD95
 }
-/deep/ .el-pagination.is-background .el-pager li:not(.disabled).active{
+
+/deep/ .el-pagination.is-background .el-pager li:not(.disabled).active {
   background-color: #10DD95;
 }
+
 // 悬浮框宽度
 /deep/ .el-tooltip__popper.is-dark {
   width: 20px;
 }
+
 // 表格高亮
 /deep/ .el-table .success-row {
   background: #D2F5FE;
 }
+
 // 表格复选框
 /deep/ .el-checkbox__inner {
   width: 0.8vw;
   height: 0.8vw;
   border: 1px solid #666666;
 }
+
 /deep/ .el-table-column--selection .cell {
   //padding: 0 1vw
 }
+
 /deep/ .el-button {
   font-size: 1rem;
 }
-/deep/ .el-input  {
+
+/deep/ .el-input {
   font-size: 0.9rem;
 }
 
@@ -195,16 +232,18 @@ $color-9: #000;
   padding: 0 !important;
   border: 0 !important;
   color: #ffffff !important;
-  background: -webkit-linear-gradient(left, #87F4BF , #69DEFB) !important;  /* Safari 5.1 - 6.0 */
-  background: -o-linear-gradient(right, #87F4BF , #69DEFB) !important;  /* Opera 11.1 - 12.0 */
-  background: -moz-linear-gradient(right, #87F4BF , #69DEFB) !important;  /* Firefox 3.6 - 15 */
-  background: linear-gradient(to right, #87F4BF , #69DEFB) !important; /* 标准的语法 */
+  background: -webkit-linear-gradient(left, #87F4BF, #69DEFB) !important; /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(right, #87F4BF, #69DEFB) !important; /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(right, #87F4BF, #69DEFB) !important; /* Firefox 3.6 - 15 */
+  background: linear-gradient(to right, #87F4BF, #69DEFB) !important; /* 标准的语法 */
 }
-.yesBtn:hover, yesBtn:visited, yesBtn:active  {
+
+.yesBtn:hover, yesBtn:visited, yesBtn:active {
   cursor: pointer !important;
   background: #87F4BF !important;
   color: #ffffff !important;
 }
+
 .infoBtn {
   width: 3.5vw;
   height: 1.5vw;
@@ -212,15 +251,17 @@ $color-9: #000;
   border: 1px solid #dddddd;
   background: #ffffff;
 }
+
 .infoBtn:hover {
   cursor: pointer;
   border: 0;
   color: #ffffff;
-  background: -webkit-linear-gradient(left, #87F4BF , #69DEFB) !important;  /* Safari 5.1 - 6.0 */
-  background: -o-linear-gradient(right, #87F4BF , #69DEFB) !important;  /* Opera 11.1 - 12.0 */
-  background: -moz-linear-gradient(right, #87F4BF , #69DEFB) !important;  /* Firefox 3.6 - 15 */
-  background: linear-gradient(to right, #87F4BF , #69DEFB) !important; /* 标准的语法 */
+  background: -webkit-linear-gradient(left, #87F4BF, #69DEFB) !important; /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(right, #87F4BF, #69DEFB) !important; /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(right, #87F4BF, #69DEFB) !important; /* Firefox 3.6 - 15 */
+  background: linear-gradient(to right, #87F4BF, #69DEFB) !important; /* 标准的语法 */
 }
+
 // 取消按钮
 .noBtn {
   width: 3.5vw;
@@ -230,6 +271,7 @@ $color-9: #000;
   color: #000000;
   cursor: pointer;
 }
+
 // 返回按钮
 .returnBtn {
   width: 4vw;
@@ -241,14 +283,16 @@ $color-9: #000;
   font-weight: bold;
   color: #409EFF;
 }
+
 /*操作-查看详情*/
 .table-span {
   cursor: pointer;
   color: #409EFF;
   border-bottom: 1px solid #409EFF;
 }
+
 /*表格-分页*/
-.table-pagination{
+.table-pagination {
   text-align: center;
   width: 100%;
   padding-top: 0.5vw;
@@ -257,6 +301,7 @@ $color-9: #000;
   line-height: 2.5vw;
   background-color: #fff;
 }
+
 // flex布局横向
 .row-nowrap {
   display: flex;
@@ -264,6 +309,7 @@ $color-9: #000;
   flex-flow: row nowrap;
   justify-content: space-between;
 }
+
 // flex布局竖向
 .column-wrap {
   display: flex;
@@ -271,11 +317,13 @@ $color-9: #000;
   flex-flow: column wrap;
   justify-content: space-between;
 }
+
 //echart图表
 .echart-size {
   width: 100%;
   height: 100%;
 }
+
 // item中的头部
 .item-title {
   position: relative;
@@ -285,6 +333,7 @@ $color-9: #000;
   font-size: 1rem;
   font-weight: bold;
 }
+
 // item中的内容
 .item-content {
   width: 100%;

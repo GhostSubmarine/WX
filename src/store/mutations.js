@@ -3,11 +3,11 @@ import {
   GET_FAULT_LIST_TABLE_DATA,
   GET_HEALTH_FIST_TABLE_DATA,
 } from './mutation-types.js';
-import { getData } from '@/service/getData'
+import {getData} from '@/service/getData'
 
 export default {
   // 健康状态-表格获取
-  [GET_HEALTH_FIST_TABLE_DATA] (state, userName) {
+  [GET_HEALTH_FIST_TABLE_DATA](state, userName) {
     let url = '/healthRecord/list'
     let params = {
       pageSize: '15',
@@ -29,7 +29,7 @@ export default {
     })
   },
   // 健康诊断-表格获取
-  [GET_FAULT_LIST_TABLE_DATA] (state, userName) {
+  [GET_FAULT_LIST_TABLE_DATA](state, userName) {
     let url = '/healthStatus/malfunctionList'
     let newStationName = state.stationName === '-1' ? '' : state.stationName // 全部'-1',王璜要求-1时传空''
     let newSwitchName = state.switchName === '-1' ? '' : state.switchName // 全部'-1',王璜要求-1时传空''

@@ -11,7 +11,7 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/': {
-        target: 'localhost:3000/', // 'http://49.4.30.135:7071/',  'http://192.168.1.223:7070/', // 246 远鹏， 97 邓鹏， 43 王璜
+        target: 'http://127.0.0.1:3000/', // 'http://49.4.30.135:7071/',  'http://192.168.1.223:7070/', // 246 远鹏， 97 邓鹏， 43 王璜
         // secure: true,  // 如果是https接口，需要配置这个参数
         changeOrigin: true,
         pathRewrite: {
@@ -59,7 +59,7 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: '',
-    assetsPublicPath: '/autotest/bd300/',
+    assetsPublicPath: '/',
 
     /**
      * Source Maps

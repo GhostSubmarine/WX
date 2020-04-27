@@ -1,16 +1,16 @@
 var express = require('express');
 var router = express.Router();
-const{data}=require('../config/data')
+const {data} = require('../config/data')
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-    var d={
-        code:0,
-        data:{name:'aaa',pwd:'123'},
-        isSuccess:true,
-        msg:"请求成功"
-        }
-      res.json(d);   
+router.get('/', function (req, res, next) {
+  var d = {
+    code: 0,
+    data: {name: 'aaa', pwd: '123'},
+    isSuccess: true,
+    msg: "请求成功"
+  }
+  res.json(d);
 //   const token = config.token; //获取配置的token
 //   const signature = req.query.signature; //获取微信发送请求参数signature
 //   const nonce = req.query.nonce; //获取微信发送请求参数nonce

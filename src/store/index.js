@@ -9,6 +9,7 @@ Vue.use(Vuex);
 // 公共变量声明
 const state = {
   // userName: '123', // 用户名称
+  // url: 'http://111.229.97.110:3000',
   WINDOW_WIDTH_TIME: 1,
   pageSize: 15,
   pageNum: 1,
@@ -29,10 +30,10 @@ const state = {
     tableData: [],
     total: 0
   },
-  state:'',
-  priceList:[],
-  sysTableData:[],
-  row:[]
+  state: '',
+  priceList: [],
+  sysTableData: [],
+  row: []
 };
 
 export default new Vuex.Store({
@@ -44,12 +45,8 @@ export default new Vuex.Store({
   //   }
   // },
   mutations,
-  actions: {
-
-  },
-  getters: {
-
-  },
+  actions: {},
+  getters: {},
   modules: {
     echartsData: echartsData,
   }

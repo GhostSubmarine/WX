@@ -91,9 +91,7 @@ const echartsData = {
       {},
     ]
   },
-  mutations: {
-
-  }
+  mutations: {}
 };
 
 export default echartsData;

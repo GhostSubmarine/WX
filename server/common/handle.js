@@ -9,7 +9,7 @@
 // 引入mysql
 var mysql = require('mysql');
 // 引入mysql连接配置
-var mysqlconfig= require('../config/db').MYSQL_CONF;
+var mysqlconfig = require('../config/db').MYSQL_CONF;
 // 引入连接池配置
 var poolextend = require('./poolextend');
 // 引入SQL模块
@@ -18,88 +18,88 @@ var sql = require('./sql');
 var json = require('./json');
 // 使用连接池，提升性能
 var pool = mysql.createPool(poolextend({}, mysqlconfig));
-var exec=require('../db/mysql').exec
+var exec = require('../db/mysql').exec
 var userData = {
-    add: function(req, res, next) {
-        pool.getConnection(function(err, connection) {
-            var param = req.query || req.params;
-            connection.query(sql.insert, [param.id, param.name, param.age], function(err, result) {
-                if (result) {
-                    result = 'add'
-                }
-                // 以json形式，把操作结果返回给前台页面
-                json(res, result);
-                // 释放连接 
-                connection.release();
-            });
-        });
-    },
-    delete: function(req, res, next) {
-        pool.getConnection(function(err, connection) {
-            var id = +req.query.id;
-            connection.query(sql.delete, id, function(err, result) {
-                if (result.affectedRows > 0) {
-                    result = 'delete';
-                } else {
-                    result = undefined;
-                }
-                json(res, result);
-                connection.release();
-            });
-        });
-    },
-    update: function(req, res, next) {
-        var param = req.body;
-        if (param.name == null || param.age == null || param.id == null) {
-            json(res, undefined);
-            return;
+  add: function (req, res, next) {
+    pool.getConnection(function (err, connection) {
+      var param = req.query || req.params;
+      connection.query(sql.insert, [param.id, param.name, param.age], function (err, result) {
+        if (result) {
+          result = 'add'
         }
-        pool.getConnection(function(err, connection) {
-            connection.query(sql.update, [param.name, param.age, +param.id], function(err, result) {
-                if (result.affectedRows > 0) {
-                    result = 'update'
-                } else {
-                    result = undefined;
-                }
-                json(res, result);
-                connection.release();
-            });
-        });
-    },
-    queryById: function(req, res, next) {
-        var id = +req.query.id;
-        pool.getConnection(function(err, connection) {
-            connection.query(sql.queryById, id, function(err, result) {
-                if (result != '') {
-                    var _result = result;
-                    result = {
-                        result: 'select',
-                        data: _result
-                    }
-                } else {
-                    result = undefined;
-                }
-                json(res, result);
-                connection.release();
-            });
-        });
-    },
-    queryAll: function(req, res, next) {
-        pool.getConnection(function(err, connection) {
-            connection.query(sql.queryAll, function(err, result) {
-                if (result != '') {
-                    var _result = result;
-                    result = {
-                        result: 'selectall',
-                        data: _result
-                    }
-                } else {
-                    result = undefined;
-                }
-                json(res, result);
-                connection.release();
-            });
-        });
+        // 以json形式，把操作结果返回给前台页面
+        json(res, result);
+        // 释放连接
+        connection.release();
+      });
+    });
+  },
+  delete: function (req, res, next) {
+    pool.getConnection(function (err, connection) {
+      var id = +req.query.id;
+      connection.query(sql.delete, id, function (err, result) {
+        if (result.affectedRows > 0) {
+          result = 'delete';
+        } else {
+          result = undefined;
+        }
+        json(res, result);
+        connection.release();
+      });
+    });
+  },
+  update: function (req, res, next) {
+    var param = req.body;
+    if (param.name == null || param.age == null || param.id == null) {
+      json(res, undefined);
+      return;
     }
+    pool.getConnection(function (err, connection) {
+      connection.query(sql.update, [param.name, param.age, +param.id], function (err, result) {
+        if (result.affectedRows > 0) {
+          result = 'update'
+        } else {
+          result = undefined;
+        }
+        json(res, result);
+        connection.release();
+      });
+    });
+  },
+  queryById: function (req, res, next) {
+    var id = +req.query.id;
+    pool.getConnection(function (err, connection) {
+      connection.query(sql.queryById, id, function (err, result) {
+        if (result != '') {
+          var _result = result;
+          result = {
+            result: 'select',
+            data: _result
+          }
+        } else {
+          result = undefined;
+        }
+        json(res, result);
+        connection.release();
+      });
+    });
+  },
+  queryAll: function (req, res, next) {
+    pool.getConnection(function (err, connection) {
+      connection.query(sql.queryAll, function (err, result) {
+        if (result != '') {
+          var _result = result;
+          result = {
+            result: 'selectall',
+            data: _result
+          }
+        } else {
+          result = undefined;
+        }
+        json(res, result);
+        connection.release();
+      });
+    });
+  }
 };
 module.exports = userData;

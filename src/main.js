@@ -18,13 +18,13 @@ Vue.config.productionTip = false
 Vue.use(LazyRender)
 Vue.use(Element)
 
-Object.defineProperty(Vue.prototype, '$echarts', { value: echarts })
+Object.defineProperty(Vue.prototype, '$echarts', {value: echarts})
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
   store,
-  components: { App },
+  components: {App},
   template: '<App/>'
 })

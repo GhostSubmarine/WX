@@ -3,7 +3,7 @@ var router = express.Router();
 var config = require('../config/config');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', function (req, res, next) {
   const token = config.token; //获取配置的token
   const signature = req.query.signature; //获取微信发送请求参数signature
   const nonce = req.query.nonce; //获取微信发送请求参数nonce
@@ -14,10 +14,10 @@ router.get('/', function(req, res, next) {
 
   //如果加密组合结果等于微信的请求参数signature，验证通过
   if (sha === signature) {
-      const echostr = req.query.echostr; //获取微信请求参数echostr
-      res.send(echostr + ''); //正常返回请求参数echostr
+    const echostr = req.query.echostr; //获取微信请求参数echostr
+    res.send(echostr + ''); //正常返回请求参数echostr
   } else {
-      res.send('验证失败');
+    res.send('验证失败');
   }
 });
 module.exports = router;
